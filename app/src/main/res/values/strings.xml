@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FortunetellingAboutDiet</string>
+
+    <string-array name="lucky_action">
+        <item>自転車に乗るといいでしょう</item>
+        <item>こんにゃくを食べると運気アップ</item>
+        <item>バナナはおやつに入ります</item>
+        <item>痩せた姿をイメージするといいかも</item>
+        <item>タニタを探すといいことありそう</item>
+    </string-array>
 </resources>
