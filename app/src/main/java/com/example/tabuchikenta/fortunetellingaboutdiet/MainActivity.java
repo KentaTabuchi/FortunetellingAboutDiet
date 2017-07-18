@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
     private TextView resultText;
+    private TextView luckyColorText;
     private Button button;
     private FotuneTeller teller = new FotuneTeller();
     @Override
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.resultText = (TextView)findViewById(R.id.resultText);
+        this.luckyColorText = (TextView)findViewById(R.id.luckyColorText);
         this.button = (Button)findViewById(R.id.button);
         this.button.setOnClickListener(this);
         Log.d("test2",teller.getFotune());
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.button){
-        resultText.setText(teller.getFotune());
+            resultText.setText(teller.getFotune());
+            luckyColorText.setText((teller.getluckeyColor()));
         }
     }
 }

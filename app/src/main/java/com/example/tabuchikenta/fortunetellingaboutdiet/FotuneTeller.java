@@ -1,5 +1,8 @@
 package com.example.tabuchikenta.fortunetellingaboutdiet;
 
+import android.util.Log;
+
+import java.math.BigDecimal;
 import java.util.Random;
 
 /**
@@ -9,6 +12,7 @@ public class FotuneTeller {
 
     public String getFotune(){
         String result;
+        double weight;     //何kgか
         String resultIsFat = null;
         int jadgeFat;
         Random ramd1 = new Random();
@@ -20,7 +24,21 @@ public class FotuneTeller {
             resultIsFat = "やせる";
         }
 
-        result = "明日は" + resultIsFat + "でしょう";
+        Random rand2 = new Random();
+        weight = rand2.nextDouble();
+        BigDecimal decimal1 = new BigDecimal(weight);
+        BigDecimal decimal2 = decimal1.setScale(1,BigDecimal.ROUND_DOWN);
+        Log.d("decimal", String.valueOf(decimal2));
+        result = "明日は" + decimal2 + "kg" + resultIsFat + "でしょう";
         return result;
     }
+    public String getluckeyColor(){
+        String result;
+        String luckyColor[] = {"赤","黄","青","緑","黒","白","虹","迷彩"};
+        Random rand = new Random();
+        int index = rand.nextInt(8);
+        result = "ラッキカラーは" + luckyColor[index] + "色です";
+        return  result;
+    }
+
 }
